@@ -5,10 +5,13 @@
         <article>
             <div class="post_title">
                 <h1>
-                    <a href="/posts/{{ $post->id }}">
+                    <a href="/posts/{{ $post->slug }}">
                         {{ $post->title }}
                     </a>
                 </h1>
+                <small>
+                    By <a href="/users/{{ $post->user->name }}"> {{ $post->user->name }}<a/> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                </small>
             </div>
 
             <div class="post_excerpt">
