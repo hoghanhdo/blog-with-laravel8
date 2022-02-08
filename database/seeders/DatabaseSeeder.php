@@ -18,10 +18,12 @@ class DatabaseSeeder extends Seeder
     {
         // No need for truncation if php artisan migrate:fresh --seed
         $user1 = User::factory()->create([
-            'name' => 'Jane Doe'
+            'name' => 'Jane Doe',
+            'user_name' => 'jane_doe'
         ]);
         $user2 = User::factory()->create([
-            'name' => 'Eddie M'
+            'name' => 'Eddie M',
+            'user_name' => 'eddie_m'
         ]);
         Post::factory(3)->create([
             'user_id' => $user1->id
