@@ -1,7 +1,5 @@
-@extends('layout')
-
-@section('content')
-    @foreach ($posts as $post)
+<x-layout>
+{{-- @foreach ($posts as $post)
         <article>
             <div class="post_title">
                 <h1>
@@ -10,7 +8,7 @@
                     </a>
                 </h1>
                 <small>
-                    By <a href="/authors/{{ $post->author->user_name }}"> {{ $post->author->name }}<a/> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                    By <a href="/authors/{{ $post->author->user_name }}"> {{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
                 </small>
             </div>
 
@@ -20,5 +18,22 @@
                 </p>
             </div>
         </article>
-    @endforeach
-@endsection
+    @endforeach --}}
+    <x-slot name="posts">
+        <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+            <!--  Feature post - 1 post -->
+            <x-feature-post />
+            <!--  Other highlight posts - 2 posts -->
+            <div class="lg:grid lg:grid-cols-2">
+                <x-post />
+                <x-post />
+            </div>
+            <!--  Normal posts - 3 posts -->
+            <div class="lg:grid lg:grid-cols-3">
+                <x-post />
+                <x-post />
+                <x-post />
+            </div>
+        </main>
+    </x-slot>
+</x-layout>
