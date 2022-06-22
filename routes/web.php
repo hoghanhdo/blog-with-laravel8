@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('posts', [
-        // Eager load relationship before retrieving all posts
         'posts' => Post::latest()->with(['category', 'author'])->get()
     ]);
 });
@@ -38,7 +37,6 @@ Route::get('categories/{category:slug}', function (Category $category) {
 
 Route::get('authors/{author:user_name}', function (User $author) {
     return view('posts', [
-        // Find authors with respective posts, then eager load posts with relationship
         'posts' => $author->posts->load(['author', 'category'])
     ]);
 });

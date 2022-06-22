@@ -8,9 +8,7 @@
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
         @include('_header')
-        @include('_banner')
-        <!--  Posts display -->
-        {{ $posts }}
+        {{ $slot }}
         @include('_footer')
     </section>
 </body>
