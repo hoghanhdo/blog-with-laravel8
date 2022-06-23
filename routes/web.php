@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -17,12 +18,7 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::latest()->with(['category', 'author'])->get(),
-        'categories' => Category::all()
-    ]);
-});
+Route::get('/', [PostController::class, 'index'])->name('index');
 
 Route::get('posts/{post:slug}', function (Post $post) {
     return view('post', [
