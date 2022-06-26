@@ -26,16 +26,9 @@ Route::get('posts/{post:slug}', function (Post $post) {
     ]);
 });
 
-Route::get('categories/{category:slug}', function (Category $category) {
-    return view('posts', [
-        'posts' => $category->posts->load(['author', 'category']),
-        'currentCategory' => $category,
-        'categories' => Category::all()
-    ]);
-});
-
 Route::get('authors/{author:user_name}', function (User $author) {
     return view('posts', [
-        'posts' => $author->posts->load(['author', 'category'])
+        'posts' => $author->posts->load(['author', 'category']),
+        'categories' => Category::all()
     ]);
 });

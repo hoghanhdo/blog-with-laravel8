@@ -24,10 +24,23 @@ class Post extends Model
     public function scopeFilter($query, array $filters) // Post::newQuery->filter()
     {
         $query->when($filters['search'] ?? false, function($query, $search) {
-            return $query
+            $query
             ->where('title', 'like', '%' . $search . '%' )
             ->orWhere('excerpt', 'like', '%' . $search . '%' )
             ->orWhere('body', 'like', '%' . $search . '%' );
         });
+        $query->when($filters['category'] ?? false, function($query, $category) {
+            $query->whereHas('category', function($q) use ($category) {
+                $q->where('slug', $category);
+            });
+        });
+
+        // $query->when($filters['category'] ?? false, function($query, $category) {
+        //     $query->whereExists(function($q) use ($category) {
+        //         $q->from('categories')
+        //         ->whereColumn('categories.id', 'posts.category_id')
+        //         ->where('categories.slug', $category);
+        //     });
+        // });
     }
 }
