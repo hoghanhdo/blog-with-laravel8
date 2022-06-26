@@ -2,7 +2,7 @@
 
 <footer class="flex justify-between items-center mt-8">
     <div class="flex items-center text-sm">
-        <img src="/images/lary-avatar.svg" alt="Lary avatar">
+        <img src="/images/avatar-batman.svg" alt="Avatar">
         <div class="ml-3">
             <a href="/authors/{{ $author->user_name }}">
                 <h5 class="font-bold">{{ $author->name }}</h5>

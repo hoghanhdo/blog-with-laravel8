@@ -1,14 +1,10 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
-        Latest <span class="text-blue-500">Laravel From Scratch</span> News
+        Latest <span class="text-blue-500">Super Cool</span> News
     </h1>
 
-    <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/lary-head.svg"
-                                                    alt="Head of Lary the mascot"></h2>
-
     <p class="text-sm mt-14">
-        Another year. Another update. We're refreshing the popular Laravel series with new content.
-        I'm going to keep you guys up to speed with what's going on!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, possimus nesciunt dignissimos, optio quod perspiciatis cumque eveniet aspernatur voluptatem accusamus sed perferendis illo, nisi hic obcaecati. Impedit architecto reiciendis mollitia?
     </p>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
@@ -36,10 +32,10 @@
             class="block text-left px-3 text-sm leading-6 hover:bg-gray-300 focus:bg-gray-300"
             >All</a>
             @foreach ($categories as $category)
-                <a href="/categories/{{ $category->slug }}"
-                class="block text-left px-3 text-sm leading-6 hover:bg-gray-300 focus:bg-gray-300
-                {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-gray-300' : '' }}"
-                >{{ $category->name }}</a>
+                    <a href="/?category={{ $category->slug }}"
+                    class="block text-left px-3 text-sm leading-6 hover:bg-gray-300 focus:bg-gray-300
+                    {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-gray-300' : '' }}"
+                    >{{ ucwords($category->name) }}</a>
             @endforeach
            </x-dropdown>
         </div>

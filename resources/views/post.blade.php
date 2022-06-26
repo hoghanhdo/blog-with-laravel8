@@ -10,7 +10,7 @@
                     </p>
 
                     <div class="flex items-center lg:justify-center text-sm mt-4">
-                        <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                        <img src="/images/avatar-batman.svg" alt="Avatar">
                         <div class="ml-3 text-left">
                             <a href="/authors/{{$post->author->user_name}}">
                                 <h5 class="font-bold">{{ $post->author->name }}</h5>
