@@ -25,10 +25,7 @@
                     {{ $post->excerpt }}
                 </p>
             </div>
-            <x-author-area
-                :author="$post->author"
-                :post="$post"
-            />
+            <x-author-area :post="$post" />
         </div>
     </div>
 </article>
