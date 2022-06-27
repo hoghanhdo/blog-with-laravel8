@@ -20,15 +20,10 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', [PostController::class, 'index'])->name('index');
 
-Route::get('posts/{post:slug}', function (Post $post) {
-    return view('post', [
-        'post' => $post
-    ]);
-});
+Route::get('posts/{post:slug}', [PostController::class, 'show'])->name('show');
 
 Route::get('authors/{author:user_name}', function (User $author) {
-    return view('posts', [
-        'posts' => $author->posts->load(['author', 'category']),
-        'categories' => Category::all()
+    return view('posts.index', [
+        'posts' => $author->posts->load(['author', 'category'])
     ]);
 });

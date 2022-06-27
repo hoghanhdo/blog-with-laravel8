@@ -1,7 +1,7 @@
 <nav class="md:flex md:justify-between md:items-center">
     <div>
         <a href="/">
-            <img src="/images/ailurophile.svg" alt="Laracasts Logo" width="42" height="9">
+            <img src="/images/glasses.svg" alt="Laracasts Logo" width="42" height="9">
         </a>
     </div>
     <div class="mt-8 md:mt-0">
