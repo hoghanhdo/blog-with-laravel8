@@ -7,6 +7,7 @@
 <script src="//unpkg.com/alpinejs" defer></script>
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
+        @include('posts/_header')
         {{ $slot }}
     </section>
 </body>

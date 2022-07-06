@@ -1,7 +1,7 @@
 <nav class="md:flex md:justify-between md:items-center">
     <div>
         <a href="/">
-            <img src="/images/glasses.svg" alt="Laracasts Logo" width="42" height="9">
+            <img src="https://www.coderslab.com.bd/wp-content/uploads/2021/01/laravel.png" alt="Laracasts Logo" width="124" height="12">
         </a>
     </div>
     <div class="mt-8 md:mt-0">
