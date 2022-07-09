@@ -3,6 +3,7 @@
         <main class="max-w-lg mx-auto mt-10 border bg-gray-100 border-gray-200 p-6 rounded-xl">
             <h1 class="text-center font-bold text-xl">Register</h1>
             <form action="/register" method="POST" class="mt-10">
+                @csrf
                 <div class="mb-6">
                     <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-700">
                         Name
@@ -11,11 +12,11 @@
                             type="text" name="name" id="name" required
                     >
 
-                    <label for="username" class="block mb-2 uppercase font-bold text-xs text-gray-700 mt-5">
+                    <label for="user_name" class="block mb-2 uppercase font-bold text-xs text-gray-700 mt-5">
                         Username
                     </label>
                     <input class="border border-gray-400 p-2 w-full"
-                            type="text" name="username" id="username" required
+                            type="text" name="user_name" id="user_name" required
                     >
 
                     <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-700 mt-5">
