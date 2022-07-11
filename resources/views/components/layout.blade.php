@@ -10,4 +10,5 @@
         @include('posts/_header')
         {{ $slot }}
     </section>
+    <x-flash />
 </body>
