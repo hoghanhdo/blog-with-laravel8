@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Automatically booting application with tailwind
         Paginator::useTailwind();
     }
 }
