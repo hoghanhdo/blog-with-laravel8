@@ -18,15 +18,16 @@ class SessionController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        if (auth()->attempt($credentials)) {
-            session()->regenerate(); // avoid session fixation
-            return redirect('/')->with('success', 'Welcome Back!');
-        }
 
-        throw ValidationException::withMessages([
-            'email' => 'Your credentials cannot be verified'
-        ]);
-        // return back()
+        if (!auth()->attempt($credentials)) {
+            throw ValidationException::withMessages([
+                'email' => 'Your credentials cannot be verified'
+            ]);
+        }
+        session()->regenerate(); // avoid session fixation
+        return redirect('/')->with('success', 'Welcome Back!');
+
+        // return back() // Similar way of throwing ValidationException
         //     ->withInput()
         //     ->withErrors([
         //     'email' => 'Your credentials cannot be verified'
